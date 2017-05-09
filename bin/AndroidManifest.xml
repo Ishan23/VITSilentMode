@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ishan.khandelwal.vitsilentmode"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <!-- permission required to use Alarm Manager -->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <receiver
+            android:name=".AutoStart1"
+            android:enabled="true"
+            android:exported="true"
+            android:label="AutoStart1" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".MainActivity2"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".GetSlots"
+            android:label="Select your slots"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".MorningSlots"
+            android:label="Select your morning slots"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".EveningSlots"
+            android:label="Select your evening slots"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Labs"
+            android:label="Select your lab slots"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".About"
+            android:label="About"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".AlarmReciever"
+            android:label="AlarmReciever" >
+        </activity>
+
+        <!-- Register the Alarm Receiver -->
+        <receiver android:name=".AlarmReciever" />
+
+        <activity
+            android:name=".RingerMode"
+            android:label="RingerMode" >
+        </activity>
+
+        <!-- Register the Alarm Receiver -->
+        <receiver android:name=".RingerMode" />
+
+        <activity
+            android:name=".Test"
+            android:label="@string/title_activity_test" >
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name=".Settings"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name=".DatabaseUpdate"
+            android:label="@string/title_activity_database_update" >
+        </activity>
+    </application>
+
+</manifest>
